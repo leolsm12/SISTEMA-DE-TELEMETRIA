@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* O body agora ocupa exatamente o tamanho da tela e corta barras de rolagem */
+body {
+  background-color: #1e293b;
+  color: #f8fafc;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.container {
+  width: 95%;
+  max-width: 1100px;
+  height: 90vh; /* Ocupa 90% da altura da tela */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  color: #38bdf8;
+  margin-bottom: 0.3rem;
+}
+
+.header p {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top:  1rem;
+}
+
+/* Aqui acontece a mágica do lado a lado */
+.painel-principal {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* A coluna direita é um pouco mais larga */
+  gap: 2rem;
+  background-color: #334155;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  flex: 1; /* Preenche o resto do container */
+}
+
+/* Divisória entre as duas colunas */
+.secao-esquerda {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px dashed #475569;
+  padding-right: 2rem;
+}
+
+.secao-direita {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+/* --- RESERVATÓRIO --- */
+.reservatorio-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.tanque-exterior {
+  width: 200px;
+  height: 350px; /* Deixei o tanque mais alto para dar mais destaque */
+  border: 4px solid #94a3b8;
+  border-radius: 10px 10px 20px 20px;
+  position: relative;
+  background-color: #0f172a;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+  display: flex;
+  align-items: flex-end;
+}
+
+.marcas-medicao {
+  position: absolute;
+  left: 5px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #94a3b8;
+  z-index: 10;
+}
+
+.agua {
+  width: 100%;
+  transition: height 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  position: relative;
+}
+
+.onda {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+}
+
+.status-alerta {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  background: #0f172a;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* --- CONTROLES E DADOS --- */
+.controle-area {
+  text-align: center;
+}
+
+.controle-area h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+.slider {
+  width: 100%;
+  cursor: pointer;
+  height: 12px;
+  border-radius: 6px;
+  background: #475569;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #38bdf8;
+  cursor: pointer;
+}
+
+.porcentagem {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #e2e8f0;
+}
+
+.dados-area {
+  background-color: #0f172a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #475569;
+}
+
+.dados-area h3 {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.dados-area pre {
+  color: #a7f3d0;
+  font-size: 1rem;
+  overflow-x: auto;
+}
+
+.btn-enviar {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 15px;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-enviar:hover {
+  background-color: #0369a1;
+}
